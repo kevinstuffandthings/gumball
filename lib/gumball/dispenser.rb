@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Gumball
   class Dispenser
     attr_reader :ttl

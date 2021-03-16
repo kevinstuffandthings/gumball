@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Gumball
   describe Dispenser do
     def now
