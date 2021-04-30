@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "logger"
+
 module Gumball
   class Dispenser
     attr_reader :ttl
@@ -8,8 +10,9 @@ module Gumball
     # @param ttl [???]
     # @param block
     # @return [Dispenser]
-    def initialize(ttl, &block)
+    def initialize(ttl, logger: nil, &block)
       @ttl = ttl
+      @logger = logger || Logger.new("/dev/null")
       @last_refreshed = nil
       @refresh_block = block
       @on_change_block = nil
@@ -34,7 +37,11 @@ module Gumball
       @_item = nil if expired?
       unless @_item
         @_item = @refresh_block.call
-        @on_change_block.call(old_item, @_item) if @last_refreshed && @on_change_block && (old_item != @_item)
+        @logger.info "#{self.class} refreshed, new_value=#{@_item}"
+        if @last_refreshed && @on_change_block && (old_item != @_item)
+          @logger.debug "#{self.class} executing on_change block; detected change from previous value #{old_item}"
+          @on_change_block.call(old_item, @_item)
+        end
         @last_refreshed = now
       end
       @_item
