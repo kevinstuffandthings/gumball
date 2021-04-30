@@ -63,7 +63,8 @@ dispenser.item # we've saved our refreshed version, and our response is immediat
 If we want to be able to set up our dispenser so that we can perform some other operation in the event the value actually changes:
 
 ```ruby
-dispenser = Gumball::Dispenser.new(300) { ExpensiveThing.value }
+# note the optional logger paseed in below...
+dispenser = Gumball::Dispenser.new(300, logger: Logger.new($stdout)) { ExpensiveThing.value }
 dispenser.on_change { |o, n| puts "OUR VALUE CHANGED: #{o} -> #{n}" }
 ```
 
