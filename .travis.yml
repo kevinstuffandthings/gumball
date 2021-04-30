@@ -6,3 +6,12 @@ rvm:
 - 3.0
 script:
 - bundle exec rspec
+deploy:
+  provider: rubygems
+  api_key:
+    secure: O8Q6c9xm9YD1ufNMoIv87tdjt7eCSyanEnvCCEEONZyHRVGWgoON5xis9u2Q9rMGZEY/Gqk2YpOOKjcPknzJTVy/MLZW5KZsAPpQeWDi8ssMndy53QqoQZncPcKYbIVxITeqn5Jk3+RL6/yMe2pfUd2NOCHRmYwktETHp/K9GiHBwKQhYqZT/TOMM6WAYyNn1eB324CAFOIgLVg+beje1GWZ6qf4Hob/5INVl8a2git74wRlums+Ca/KTLl+UmZ/Mc6IPuUY8XBuwwa9HR0S7AoA7YL3M/hqujQwGlRmt3vXLdNbyKrj7An7AaQ/aGWKeR3snzBkDtzYcoQ1ofL0nZzRw60qjoO1sYJOhzjLa9bVScRDshSZRtm6Zh7iqewT1jIdEVMVYI0zOFuII8x8WHehYCFAO4F0YjPe+Gk1BDmNkPqmJvtLmtfW0LaSjSXSzt0uUBeIX1G+8LkrI8HqyTAkzwu7S3jj4PRJVjeV8jzXIgRmZEgExuIRxkSYkGESieZav8fsCRMDi7tp6bfNTr5R27HSDAldVFjNwjAZyHdrJQku4N162zcE61MTlVuvZ3heiKOXRP0khzM8szcWGteqhy/0Y7YtIt4fdR1OHt66Md4XVT6G95hUQV35m4TmLesBjPv6re+oMEY0NH79ONNLCCdlfHBGA/UuB43Nvzs=
+  gem: gumball
+  on:
+    tags: true
+    repo: kevinstuffandthings/gumball
+  skip_cleanup: 'true'
