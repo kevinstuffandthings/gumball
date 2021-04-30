@@ -2,7 +2,9 @@
 
 module Gumball
   describe Dispenser do
-    def now = Time.now.to_i
+    def now
+      Time.now.to_i
+    end
 
     let(:ttl) { 5 }
     let(:logger) { nil }
