@@ -1,4 +1,4 @@
-# Gumball [![Build Status](https://travis-ci.com/kevinstuffandthings/gumball.svg?branch=master)](https://travis-ci.com/kevinstuffandthings/gumball) [![Gem Version](https://badge.fury.io/rb/gumball.svg)](https://badge.fury.io/rb/gumball)
+# Gumball ![Build Status](https://github.com/kevinstuffandthings/gumball/actions/workflows/ruby.yml/badge.svg) [![Gem Version](https://badge.fury.io/rb/gumball.svg)](https://badge.fury.io/rb/gumball)
 
 A gem providing a mechanism to dispense instances of a class, somewhere between a true singleton and new instance each time.
 
